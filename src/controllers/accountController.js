@@ -9,11 +9,9 @@ module.exports = router;
 
 function resetAccount(req, res) {
   try {
-    console.log('initialize');
     accountService.initialize();
+    res.status(200).send('OK');
   } catch (e) {
-    console.log(e);
-
     res.status(500).send(e);
   }
 }

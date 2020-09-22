@@ -13,7 +13,7 @@ function getBalance(req, res) {
     res.status(200).send(JSON.stringify(accountService.getBalance(accountId)));
   } catch (e) {
     if (e.message === 'INVALID_ACCOUNT') {
-      res.status(404).send();
+      res.status(404).send(JSON.stringify(0));
     } else {
       res.status(500).send(e);
     }

@@ -2,8 +2,6 @@ const { Router } = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const compression = require('compression');
-const errorHandler = require('./errors');
-const account = require('../state/account');
 
 const router = Router();
 

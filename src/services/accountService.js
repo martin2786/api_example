@@ -2,7 +2,9 @@ const accountService = {
   account: { id: '100', balance: 0 },
 
   initialize() {
+    console.log('set account');
     this.account = { id: '100', balance: 0 };
+    console.log('account set');
   },
 
   getBalance(id) {
