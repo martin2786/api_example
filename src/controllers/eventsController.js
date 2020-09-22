@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const accountService = require('../services/accountService');
 
+// POST - performs an action on the account, the action is triggered based on the received type.
 router.post('/', processEvent);
 
 module.exports = router;
@@ -10,6 +11,8 @@ function processEvent(req, res) {
   try {
     const event = req.body;
     let balance = 0;
+
+    // The type defines what kind of action is performed
     switch (event.type) {
       case 'deposit':
         balance = accountService.deposit(event.destination, event.amount);
@@ -30,6 +33,7 @@ function processEvent(req, res) {
         break;
     }
   } catch (e) {
+    // Return 404 if the given account is invalid
     if (e.message === 'INVALID_ACCOUNT') {
       res.status(404).send(JSON.stringify(0));
     } else {

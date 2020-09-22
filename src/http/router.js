@@ -5,9 +5,10 @@ const compression = require('compression');
 
 const router = Router();
 
+// enable cors, add bodyparse, enable compression
 router.use(cors()).use(bodyParser.json()).use(compression());
 
-// routes
+// map routes to controllers
 router.use('/balance', require('../controllers/balanceController'));
 router.use('/event', require('../controllers/eventsController'));
 router.use('/reset', require('../controllers/accountController'));

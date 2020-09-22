@@ -1,10 +1,9 @@
+// Static function to perform actions on the account and persist it while the process is alive.
 const accountService = {
   account: { id: '100', balance: 0 },
 
   initialize() {
-    console.log('set account');
     this.account = { id: '100', balance: 0 };
-    console.log('account set');
   },
 
   getBalance(id) {
@@ -28,7 +27,6 @@ const accountService = {
   },
 
   transfer(idOrigin, amount) {
-    console.log(idOrigin);
     this.validateAccount(idOrigin);
     this.account.balance -= amount;
     return this.account.balance;
@@ -36,6 +34,7 @@ const accountService = {
 
   validateAccount(id) {
     if (this.account.id !== id) {
+      // This error is handled on the previous layer.
       throw new Error('INVALID_ACCOUNT');
     }
   },

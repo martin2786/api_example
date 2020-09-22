@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const accountService = require('../services/accountService');
 
-// routes
+// POST to reset the account information
 router.post('/', resetAccount);
 
 module.exports = router;
