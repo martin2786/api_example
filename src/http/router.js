@@ -5,15 +5,11 @@ const compression = require('compression');
 
 const router = Router();
 
-const apiRouter = Router();
-
-apiRouter.use(cors()).use(bodyParser.json()).use(compression());
+router.use(cors()).use(bodyParser.json()).use(compression());
 
 // routes
-apiRouter.use('/balance', require('../controllers/balanceController'));
-apiRouter.use('/event', require('../controllers/eventsController'));
-apiRouter.use('/reset', require('../controllers/accountController'));
-
-router.use('/api', apiRouter);
+router.use('/balance', require('../controllers/balanceController'));
+router.use('/event', require('../controllers/eventsController'));
+router.use('/reset', require('../controllers/accountController'));
 
 module.exports = router;
