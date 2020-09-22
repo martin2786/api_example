@@ -9,6 +9,7 @@ It is deployed here https://ebanx-test-mg.herokuapp.com through Heroku.
 # File structure
 The code can be found inside the src folder with the following structure:
 - src
+
 	 -- controllers
 	 - accountController
 	 - balanceController
@@ -16,7 +17,7 @@ The code can be found inside the src folder with the following structure:
 
 	 -- http
 	 -	router
-	 -
+	 
 	 -- services
 	 - accountService 
  
